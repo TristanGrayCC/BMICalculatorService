@@ -1,11 +1,20 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using BMIApplication.Models;
+using BMIApplication.Data;
+using BMIApplication.Services;
 
 namespace BMIApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly LoginService _loginService;
+
+        public HomeController(ApplicationDbContext context)
+        {
+            _loginService = new LoginService(context);
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -13,9 +22,8 @@ namespace BMIApplication.Controllers
 
         public IActionResult Details()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            var userData = _loginService.GetUserData(User.Identity.Name);
+            return View(userData);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

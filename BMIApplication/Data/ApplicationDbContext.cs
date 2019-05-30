@@ -14,5 +14,9 @@ namespace BMIApplication.Data
         public DbSet<UserData> UserDatas { get; set; }
 
         public IQueryable<UserData> GetUserData => UserDatas;
+        public UserData GetUser(string userName)
+        {
+            return UserDatas.Include(x => x.User).SingleOrDefault(x => x.User.UserName == userName);
+        }
     }
 }

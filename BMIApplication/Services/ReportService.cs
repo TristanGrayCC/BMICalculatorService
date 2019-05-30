@@ -21,7 +21,7 @@ namespace BMIApplication.Services
             return GenerateReport(dataList);
         }
 
-        public static IEnumerable<BMIReportViewModel> GenerateReport(IEnumerable<UserData> dataList)
+        private static IEnumerable<BMIReportViewModel> GenerateReport(IEnumerable<UserData> dataList)
         {
             var categoryList = new List<BMIReportViewModel>()
             {
