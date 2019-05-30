@@ -43,8 +43,7 @@ namespace BMIApplication
             .AddOpenIdConnect("Auth0", SetOpenIdConnectOptions);
 
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
