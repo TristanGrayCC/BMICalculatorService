@@ -8,7 +8,7 @@ namespace BMIApplication.Data.Models
     public class UserData
     {
         [Key]
-        public int? UserId { get; set; }
+        public string UserId { get; set; }
         [ForeignKey(nameof(UserId))]
         public IdentityUser User { get; set; }
         public DateTime? DateOfBirth { get; set; }
