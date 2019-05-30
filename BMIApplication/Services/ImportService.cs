@@ -16,9 +16,9 @@ namespace BMIApplication.Services
             _context = context;
         }
 
-        public void Import(string fileAdress)
+        public void Import(IEnumerable<string> fileData)
         {
-            var readData = File.ReadLines(fileAdress).Select(BuildUserData);
+            var readData = fileData.Select(BuildUserData);
 
             SaveImport(readData);
         }

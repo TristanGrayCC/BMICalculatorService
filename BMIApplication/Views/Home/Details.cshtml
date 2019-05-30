@@ -1,7 +1,12 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@model BMIApplication.Models.UserViewModel
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewBag.Title = "User Details";
+    Layout = "_Layout";
+}
+
+
+@Html.DisplayFor(m => m.Name)
+@Html.DisplayFor(m => m.Weight)
+@Html.DisplayFor(m => m.Height)
+@Html.DisplayFor(m => m.BMI)
