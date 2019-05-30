@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BMIApplication.Data.Models
@@ -8,7 +9,7 @@ namespace BMIApplication.Data.Models
         [Key]
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
+        public IdentityUser User { get; set; }
         public decimal Weight { get; set; }
         public decimal Height { get; set; }
     }
