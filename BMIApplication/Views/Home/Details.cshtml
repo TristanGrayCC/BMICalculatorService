@@ -11,31 +11,35 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    <div id="grid-container">
-        <div class="grid-item">
-            @Html.LabelFor(m => m.Name)
-        </div>
-        <div class="grid-item">
-            @Html.DisplayFor(m => m.Name)
-        </div>
-        <div class="grid-item">
-            @Html.LabelFor(m => m.Weight)
-        </div>
-        <div class="grid-item">
-            @Html.DisplayFor(m => m.Weight)
-        </div>
-        <div class="grid-item">
-            @Html.LabelFor(m => m.Height)
-        </div>
-        <div class="grid-item">
-            @Html.DisplayFor(m => m.Height)
-        </div>
-        <div class="grid-item">
-            @Html.LabelFor(m => m.BMI)
-        </div>
-        <div class="grid-item">
-            @Html.DisplayFor(m => m.BMI)
-        </div>
-    </div>
+    <table id="grid-container">
+        <tr>
+            <th class="grid-item">
+                @Html.LabelFor(m => m.Name)
+            </th>
+            <th class="grid-item">
+                @Html.LabelFor(m => m.Weight)
+            </th>
+            <th class="grid-item">
+                @Html.LabelFor(m => m.Height)
+            </th>
+            <th class="grid-item">
+                @Html.LabelFor(m => m.BMI)
+            </th>
+        </tr>
+        <tr>
+            <td class="grid-item">
+                @Html.DisplayFor(m => m.Name)
+            </td>
+            <td class="grid-item">
+                @Html.DisplayFor(m => m.Weight)
+            </td>
+            <td class="grid-item">
+                @Html.DisplayFor(m => m.Height)
+            </td>
+            <td class="grid-item">
+                @Html.DisplayFor(m => m.BMI)
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
