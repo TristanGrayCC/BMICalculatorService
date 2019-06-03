@@ -5,8 +5,37 @@
     Layout = "_Layout";
 }
 
-
-@Html.DisplayFor(m => m.Name)
-@Html.DisplayFor(m => m.Weight)
-@Html.DisplayFor(m => m.Height)
-@Html.DisplayFor(m => m.BMI)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            @Html.LabelFor(m => m.Name)
+        </div>
+        <div class="grid-item">
+            @Html.DisplayFor(m => m.Name)
+        </div>
+        <div class="grid-item">
+            @Html.LabelFor(m => m.Weight)
+        </div>
+        <div class="grid-item">
+            @Html.DisplayFor(m => m.Weight)
+        </div>
+        <div class="grid-item">
+            @Html.LabelFor(m => m.Height)
+        </div>
+        <div class="grid-item">
+            @Html.DisplayFor(m => m.Height)
+        </div>
+        <div class="grid-item">
+            @Html.LabelFor(m => m.BMI)
+        </div>
+        <div class="grid-item">
+            @Html.DisplayFor(m => m.BMI)
+        </div>
+    </div>
+</body>
+</html>

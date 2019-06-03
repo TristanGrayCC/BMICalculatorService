@@ -22,7 +22,8 @@ namespace BMIApplication.Controllers
 
         public IActionResult Details()
         {
-            var userData = _loginService.GetUserData(User.Identity.Name);
+            //var userData = _loginService.GetUserData(User.Identity.Name);
+            var userData = _loginService.GetUserData("gooduser");
             return View(userData);
         }
 

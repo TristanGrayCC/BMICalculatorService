@@ -24,17 +24,27 @@ namespace BMIApplication.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IdentityUser>().HasData(
-            new IdentityUser
+            var goodUser = new IdentityUser
             {
+                Id = "goodUserId",
                 UserName = "gooduser",
                 PasswordHash = GetHashedPassword()
-            },
+            };
+            modelBuilder.Entity<IdentityUser>().HasData(
+            goodUser,
             new IdentityUser
             {
                 UserName = "baduser",
                 PasswordHash = GetHashedPassword(),
                 LockoutEnd = new DateTimeOffset(new DateTime(2099, 01, 01))
+            });
+
+            modelBuilder.Entity<UserData>().HasData(
+            new UserData
+            {
+                Height = 1.85m,
+                Weight = 83.5m,
+                UserId = goodUser.Id
             });
 
             base.OnModelCreating(modelBuilder);

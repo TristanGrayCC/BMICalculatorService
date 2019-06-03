@@ -4,14 +4,16 @@ using BMIApplication.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BMIApplication.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190603141356_SetupExampleUserData")]
+    partial class SetupExampleUserData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,8 +39,8 @@ namespace BMIApplication.Data.Migrations
                         new
                         {
                             UserId = "goodUserId",
-                            Height = 1.85m,
-                            Weight = 83.5m
+                            Height = 83.4m,
+                            Weight = 185m
                         });
                 });
 
@@ -141,23 +143,23 @@ namespace BMIApplication.Data.Migrations
                         {
                             Id = "goodUserId",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "765014eb-283f-440e-a4fe-4914a9f7d94c",
+                            ConcurrencyStamp = "f2c7033e-0ef8-48f9-afb1-bddc0f843baf",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "bnAhdoXVgG7p5GaL0pDHnp9clZPmmBZBNkJAXqriKA2ea9TI",
+                            PasswordHash = "u4Z2lL3jlzg5OzxEXuxgB+iJmRV2XT6/IdigJXFeuGqmLRSB",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "gooduser"
                         },
                         new
                         {
-                            Id = "f7b50b15-7006-4b95-8fa8-1eae73832130",
+                            Id = "af141a60-e18e-4845-8b3f-6dda232d2989",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c44f5535-239e-4cab-8959-5d1bf452f36d",
+                            ConcurrencyStamp = "4c0d727e-8824-470d-9189-feb7b61f6853",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             LockoutEnd = new DateTimeOffset(new DateTime(2099, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            PasswordHash = "urgFaCp5LRc/eTl4eI8A18U6zfJrUVtX8PEqQR6DWWex908E",
+                            PasswordHash = "n8rG+gUx0fHoycuvAiCUB8SLrmX61NIIM+RonMF/JBBXVZaF",
                             PhoneNumberConfirmed = false,
                             TwoFactorEnabled = false,
                             UserName = "baduser"

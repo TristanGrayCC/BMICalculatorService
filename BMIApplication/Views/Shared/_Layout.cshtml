@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
@@ -31,7 +31,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Details</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Details">Details</a></li>
                     <li><a asp-area="" asp-controller="Import" asp-action="Index">Import</a></li>
                     <li><a asp-area="" asp-controller="Report" asp-action="Index">Report</a></li>
                 </ul>
@@ -41,7 +41,9 @@
     </nav>
 
     <div class="container body-content">
-        @RenderBody()
+        <div class="body-container">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>&copy; 2019 - BMIApplication</p>

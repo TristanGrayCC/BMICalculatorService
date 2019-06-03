@@ -25,7 +25,8 @@ namespace BMIApplication.Services
 
         private void SaveImport(IEnumerable<UserData> userData)
         {
-            foreach (var data in userData)
+            //Skips header line when loading data
+            foreach (var data in userData.Skip(1))
             {
                 _context.UserDatas.Add(data);
             }
